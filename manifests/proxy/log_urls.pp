@@ -21,7 +21,7 @@ class swift::proxy::log_urls() {
     order   => '50',
   }
 
-  vscrepo { '/opt/omh':
+  vcsrepo { '/opt/omh':
     ensure   => latest,
     provider => git,
     source   => 'https://git.siminn.is/cloud-storage/omh.git',
