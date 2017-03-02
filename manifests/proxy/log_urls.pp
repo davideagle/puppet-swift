@@ -21,21 +21,27 @@ class swift::proxy::log_urls() {
     order   => '50',
   }
 
+  vscrepo { '/opt/omh'
+    ensure   => latest,
+    provider => git,
+    source   => 'https://git.siminn.is/cloud-storage/omh.git'
+  }
+
   file { '/usr/lib/python2.7/dist-packages/swift/common/middleware/logs_urls.py':
-    ensure => file,
+    ensure => link,
     mode   => '0644',
-    source => 'https://git.siminn.is/cloud-storage/omh/raw/master/logs_urls.py',
+    target => '/opt/omh/logs_urls.py',
   }
 
   file { '/usr/lib/python2.7/dist-packages/swift/common/middleware/tempauth.py':
     ensure => file,
     mode   => '0644',
-    source => 'https://git.siminn.is/cloud-storage/omh/raw/master/tempauth.py',
+    target => '/opt/omh/tempauth.py',
   }
 
   file { '/usr/lib/python2.7/dist-packages/swift3/middleware.py':
     ensure => file,
     mode   => '0644',
-    source => 'https://git.siminn.is/cloud-storage/omh/raw/master/middleware.py',
+    target => '/opt/omh/middleware.py',
   }
 }
