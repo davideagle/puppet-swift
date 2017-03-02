@@ -24,7 +24,7 @@ class swift::proxy::log_urls() {
   vscrepo { '/opt/omh':
     ensure   => latest,
     provider => git,
-    source   => 'https://git.siminn.is/cloud-storage/omh.git'
+    source   => 'https://git.siminn.is/cloud-storage/omh.git',
   }
 
   file { '/usr/lib/python2.7/dist-packages/swift/common/middleware/logs_urls.py':
