@@ -13,7 +13,7 @@
 # == Copyright
 #
 #
-class swift::proxy::log_urls() {
+class swift::proxy::logs_urls() {
 
   concat::fragment { 'swift_logs_urls':
     target  => '/etc/swift/proxy-server.conf',
